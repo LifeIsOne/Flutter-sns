@@ -19,46 +19,7 @@ class ChatCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Container(
-              color: const Color(0xFFB2C7DA),
-              child: Scaffold(
-                // ✅기본 배경이 흰색이기 때문에 transparent
-                backgroundColor: Colors.transparent,
-                appBar: AppBar(
-                  backgroundColor: Colors.transparent,
-                  title: Text(
-                    "홍길동",
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                  actions: const [
-                    Icon(FontAwesomeIcons.search, size: 20),
-                    SizedBox(width: 20),
-                    Icon(FontAwesomeIcons.bars, size: 20),
-                    SizedBox(width: 20),
-                  ],
-                ),
-                body: Column(
-                  children: [
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          TimeLine(time: "2024년 4월 17일 금요일"),
-                          OtherChat(
-                            name: "최주호",
-                            text: "많이 늘었네",
-                            time: "오후 2:50",
-                          ),
-                          MyChat(
-                            text: "ㄟ( ▔, ▔ )ㄏ",
-                            time: "오후 2:51",
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            builder: (context) => ChatRoomScreen(),
           ),
         );
       },
@@ -118,8 +79,83 @@ class ChatCard extends StatelessWidget {
   }
 }
 
+class ChatRoomScreen extends StatelessWidget {
+  final chats = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xFFB2C7DA),
+      child: Scaffold(
+        // ✅기본 배경이 흰색이기 때문에 transparent
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Text(
+            "홍길동",
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          actions: const [
+            Icon(FontAwesomeIcons.search, size: 20),
+            SizedBox(width: 20),
+            Icon(FontAwesomeIcons.bars, size: 20),
+            SizedBox(width: 20),
+          ],
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
+                    children: [
+                      TimeLine(time: "2024년 4월 17일 금요일"),
+                      OtherChat(
+                        name: "최주호",
+                        text: "많이 늘었네",
+                        time: "오후 2:50",
+                      ),
+                      MyChat(
+                        text: "ㄟ( ▔, ▔ )ㄏ",
+                        time: "오후 2:51",
+                      ),
+                      ...List.generate(
+                        chats.length,
+                        (index) => chats[index],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 60,
+              color: Colors.white,
+              child: Row(
+                children: [
+                  IconButton(
+                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    onPressed: () {},
+                    icon: Icon(FontAwesomeIcons.ad),
+                    iconSize: 25,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class MyChat extends StatelessWidget {
-  const MyChat({super.key, this.text, this.time});
+  const MyChat({
+    super.key,
+    this.text,
+    this.time,
+  });
 
   final text;
   final time;
