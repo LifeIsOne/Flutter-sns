@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class FriendScreen extends StatelessWidget {
   const FriendScreen({
@@ -7,6 +7,9 @@ class FriendScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("첫번째 스크린입니다."));
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: AppBar(title: Text("친구")),
+    );
   }
 }

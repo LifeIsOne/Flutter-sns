@@ -22,7 +22,12 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: _selIdx,
-        children: [FriendScreen(), ChatScreen(), MoreScreen()],
+        children: [
+          // 화면 3
+          FriendScreen(),
+          ChatScreen(),
+          MoreScreen(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         // 클릭했을 때/안 돼있을 때 올라옴
