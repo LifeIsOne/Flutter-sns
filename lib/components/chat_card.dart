@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../models/chat.dart';
 
@@ -13,7 +14,33 @@ class ChatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Container(
+              color: const Color(0xFFB2C7DA),
+              child: Scaffold(
+                // ✅기본 배경이 흰색이기 때문에 transparent
+                backgroundColor: Colors.transparent,
+                appBar: AppBar(
+                  backgroundColor: Colors.transparent,
+                  title: Text(
+                    "홍길동",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  actions: const [
+                    Icon(FontAwesomeIcons.search, size: 20),
+                    SizedBox(width: 20),
+                    Icon(FontAwesomeIcons.bars, size: 20),
+                    SizedBox(width: 20),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
         child: Row(
