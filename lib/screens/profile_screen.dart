@@ -61,44 +61,12 @@ class ProfileScreen extends StatelessWidget {
               // ✅한 줄만!
               maxLines: 1,
             ),
-            const SizedBox(height: 20),
-            const Divider(color: Colors.white),
-            if (user.name == me.name)
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    BottomIconButton(
-                      icon: FontAwesomeIcons.comment,
-                      iconText: "나와의 채팅",
-                    ),
-                    SizedBox(width: 50),
-                    BottomIconButton(
-                      icon: FontAwesomeIcons.pen,
-                      iconText: "프로필 편집",
-                    ),
-                  ],
-                ),
-              )
-            else
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    BottomIconButton(
-                      icon: FontAwesomeIcons.comment,
-                      iconText: "1:1채팅",
-                    ),
-                    SizedBox(width: 50),
-                    BottomIconButton(
-                      icon: FontAwesomeIcons.phone,
-                      iconText: "통화하기",
-                    ),
-                  ],
-                ),
-              ),
+            const SizedBox(height: 10),
+            const Divider(
+              color: Colors.white,
+            ),
+            // 프로필 별 아이콘 구성
+            if (user.name == me.name) _buildMyIcons() else _bulidFriendIcons(),
           ],
         ),
         appBar: AppBar(
@@ -113,13 +81,53 @@ class ProfileScreen extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-          actions: [
+          actions: const [
             RoundIconButton(icon: FontAwesomeIcons.gift),
             SizedBox(width: 15),
             RoundIconButton(icon: FontAwesomeIcons.cog),
             SizedBox(width: 15),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildMyIcons() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BottomIconButton(
+            icon: FontAwesomeIcons.comment,
+            iconText: "나와의 채팅",
+          ),
+          SizedBox(width: 50),
+          BottomIconButton(
+            icon: FontAwesomeIcons.pen,
+            iconText: "프로필 편집",
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _bulidFriendIcons() {
+    return const Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BottomIconButton(
+            icon: FontAwesomeIcons.comment,
+            iconText: "1:1채팅",
+          ),
+          SizedBox(width: 50),
+          BottomIconButton(
+            icon: FontAwesomeIcons.phone,
+            iconText: "통화하기",
+          ),
+        ],
       ),
     );
   }
