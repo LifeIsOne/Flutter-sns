@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../components/round_icon_button.dart';
 import '../models/user.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -77,30 +78,13 @@ class ProfileScreen extends StatelessWidget {
             },
           ),
           actions: [
-            Container(
-              width: 32,
-              height: 32,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  width: 1,
-                  color: Colors.white,
-                ),
-              ),
-              child: Icon(
-                FontAwesomeIcons.gift,
-                size: 17,
-                color: Colors.white,
-              ),
-            ),
+            RoundIconButton(icon: FontAwesomeIcons.gift),
             SizedBox(width: 15),
-            // RoundedRectangleBorder(icon: FontAwesomeIcons.cog),
-            // SizedBox(width: 15),
+            RoundIconButton(icon: FontAwesomeIcons.cog),
+            SizedBox(width: 15),
           ],
         ),
       ),
     );
   }
 }
-
-class RoundIconButton {}
