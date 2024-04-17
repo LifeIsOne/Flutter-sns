@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kakao/models/user.dart';
 
+import '../screens/profile_screen.dart';
+
 class ProfileCard extends StatelessWidget {
   const ProfileCard({
     super.key,
@@ -35,27 +37,6 @@ class ProfileCard extends StatelessWidget {
         subtitle: Text(
           user.intro,
           style: TextStyle(fontSize: 16),
-        ),
-      ),
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({
-    super.key,
-    required this.user,
-  });
-
-  final User user;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(user.backgroundImage),
-          fit: BoxFit.fitHeight,
         ),
       ),
     );
