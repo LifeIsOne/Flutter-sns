@@ -13,7 +13,11 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       // ✅(목록보기)채팅방 배경색
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text("채팅"),
+      ),
       body: ListView.builder(
+        itemCount: chats.length,
         itemBuilder: (context, index) {
           return ChatCard(chat: chats[index]);
         },
