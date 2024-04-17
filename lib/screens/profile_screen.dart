@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../components/bottom_icon_button.dart';
 import '../components/round_icon_button.dart';
 import '../models/user.dart';
 
@@ -68,44 +69,14 @@ class ProfileScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Column(
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.comment,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "나와의 채팅",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                          ),
-                        )
-                      ],
+                    BottomIconButton(
+                      icon: FontAwesomeIcons.comment,
+                      iconText: "나와의 채팅",
                     ),
                     SizedBox(width: 50),
-                    Column(
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.pen,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "프로필 편집",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                          ),
-                        )
-                      ],
+                    BottomIconButton(
+                      icon: FontAwesomeIcons.pen,
+                      iconText: "프로필 편집",
                     ),
                   ],
                 ),
@@ -116,46 +87,14 @@ class ProfileScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Column(
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.comment,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "1:1 채팅",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                          ),
-                        )
-                      ],
+                    BottomIconButton(
+                      icon: FontAwesomeIcons.comment,
+                      iconText: "1:1채팅",
                     ),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    Column(
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.phone,
-                          color: Colors.white,
-                          size: 25,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "통화하기",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                          ),
-                        )
-                      ],
+                    SizedBox(width: 50),
+                    BottomIconButton(
+                      icon: FontAwesomeIcons.phone,
+                      iconText: "통화하기",
                     ),
                   ],
                 ),
