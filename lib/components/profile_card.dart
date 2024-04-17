@@ -12,7 +12,14 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProfileScreen(user: user),
+          ),
+        );
+      },
       child: ListTile(
         leading: CircleAvatar(
 // radius: 20,
@@ -28,6 +35,27 @@ class ProfileCard extends StatelessWidget {
         subtitle: Text(
           user.intro,
           style: TextStyle(fontSize: 16),
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({
+    super.key,
+    required this.user,
+  });
+
+  final User user;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(user.backgroundImage),
+          fit: BoxFit.fitHeight,
         ),
       ),
     );
