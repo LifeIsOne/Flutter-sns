@@ -17,7 +17,7 @@ class FriendScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
           // 나의 프로필 카드
-          ProfiledCard(user: me),
+          ProfileCard(user: me),
           const Divider(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -31,11 +31,11 @@ class FriendScreen extends StatelessWidget {
           ),
           // 차지하는 공간만큼 확장
           Expanded(
-            child: ListView(
-              children: List.generate(
-                friends.length,
-                (index) => ProfiledCard(user: friends[index]),
-              ),
+            child: ListView.builder(
+              itemCount: friends.length,
+              itemBuilder: (context, index) {
+                return ProfileCard(user: friends[index]);
+              },
             ),
           )
         ],

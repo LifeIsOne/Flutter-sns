@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kakao/models/user.dart';
 
-class ProfiledCard extends StatelessWidget {
-  const ProfiledCard({
+class ProfileCard extends StatelessWidget {
+  const ProfileCard({
     super.key,
     required this.user,
   });
