@@ -1,4 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:kakao/models/chat.dart';
+
+import '../components/chat_card.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({
@@ -7,6 +10,18 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("두번째 스크린입니다."));
+    return Scaffold(
+      // ✅(목록보기)채팅방 배경색
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text("채팅"),
+      ),
+      body: ListView.builder(
+        itemCount: chats.length,
+        itemBuilder: (context, index) {
+          return ChatCard(chat: chats[index]);
+        },
+      ),
+    );
   }
 }
