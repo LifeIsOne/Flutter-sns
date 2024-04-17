@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kakao/screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,10 +20,7 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black), // ?
         ),
       ),
-      home: Scaffold(
-        body: Center(child: Text("메인 페이지"),),
-      ),
+      home: MainScreen(),
     );
   }
 }
-
