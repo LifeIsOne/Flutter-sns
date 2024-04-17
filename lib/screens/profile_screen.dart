@@ -62,7 +62,104 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Divider(color: Colors.white),
-            if (user.name == me.name) Row() else Row(),
+            if (user.name == me.name)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.comment,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "나와의 채팅",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(width: 50),
+                    Column(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.pen,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "프로필 편집",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            else
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.comment,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "1:1 채팅",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    Column(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.phone,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "통화하기",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
           ],
         ),
         appBar: AppBar(
