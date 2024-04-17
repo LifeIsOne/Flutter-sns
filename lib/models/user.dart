@@ -15,8 +15,8 @@ final String _urlPrefix =
 
 User me = User(
   backgroundImage: "${_urlPrefix}_me.jpg",
-  name: "김철수",
-  intro: "고통없이는 얻는 것도 없다.",
+  name: "Matthew",
+  intro: "항상 행복하세요",
 );
 
 List<User> friends = [
