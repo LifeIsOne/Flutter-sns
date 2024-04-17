@@ -17,6 +17,11 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: _selIdx,
+        children: [
+          Center(child: Text("첫번째 스크린입니다.")),
+          Center(child: Text("두번째 스크린입니다.")),
+          Center(child: Text("세번째 스크린입니다."))
+        ],
       ),
     );
   }
