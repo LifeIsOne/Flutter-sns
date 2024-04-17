@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'chat_screen.dart';
+import 'friend_screen.dart';
+import 'more_screen.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({
     super.key,
@@ -18,11 +22,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: _selIdx,
-        children: [
-          Center(child: Text("첫번째 스크린입니다.")),
-          Center(child: Text("두번째 스크린입니다.")),
-          Center(child: Text("세번째 스크린입니다."))
-        ],
+        children: [FriendScreen(), ChatScreen(), MoreScreen()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         // 클릭했을 때/안 돼있을 때 올라옴
