@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({
@@ -7,6 +7,8 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("두번째 스크린입니다."));
+    return Center(
+      child: Text("두번째 페이지입니다."),
+    );
   }
 }
