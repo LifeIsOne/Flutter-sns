@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({
@@ -7,6 +7,18 @@ class MoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("세번째 스크린입니다."));
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text("더보기"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: GridView.count(
+          crossAxisCount: 4,
+          children: [],
+        ),
+      ),
+    );
   }
 }
